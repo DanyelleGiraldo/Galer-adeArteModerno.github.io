@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de Arte Moderno. Explora colecciones impresionantes y disfruta de una experiencia inmersiva.">
+    <title>Galería de Arte Moderno</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Galería de Arte Moderno</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#colecciones">Colecciones</a></li>
+                <li><a href="#eventos">Exposiciones</a></li>
+                <li><a href="#noticias">Noticias</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Bienvenidos a la Galería de Arte Moderno</h2>
+        <p>Explora el arte contemporáneo y vive una experiencia inmersiva.</p>
+        <button onclick="explorar()">Explorar Colecciones</button>
+    </section>    
+
+    <section id="colecciones" class="gallery">
+        <h2>Colecciones Destacadas</h2>
+        <div class="art-grid">
+            <div class="art-item" onclick="openModal('Los jugadores de cartas', 'Paul Cézanne', 'Esta obra es uno de los trabajos más conocidos de Cézanne. Es un estudio intenso de las relaciones humanas.', 'img/art1.jpg')">
+                <img src="img/art1.jpg" alt="Obra de arte 1" style="height: 200px;">
+                <h3>Los jugadores de cartas</h3>
+                <p>Paul Cézanne</p>
+            </div>
+            <div class="art-item" onclick="openModal('La alegría de vivir', 'Matisse', 'Es un manifiesto del fauvismo, lleno de colores vibrantes y escenas idílicas.', 'img/art2.jpg')">
+                <img src="img/art2.jpg" alt="Obra de arte 2" style="height: 200px;">
+                <h3>La alegría de vivir</h3>
+                <p>Matisse</p>
+            </div>
+            <div class="art-item" onclick="openModal('Las señoritas de Avignon', 'Picasso', 'Esta pintura marca el inicio del cubismo, una revolución en el mundo del arte.', 'img/art3.jpg')">
+                <img src="img/art3.jpg" alt="Obra de arte 3" style="height: 200px;">
+                <h3>Las señoritas de Avignon</h3>
+                <p>Picasso</p>
+            </div>            
+        </div>
+    </section>
+
+    <div id="artModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="artImage" src="" alt="Imagen del arte" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 20px;">
+            <h3 id="artTitle"></h3>
+            <p id="artArtist"></p>
+            <p id="artDescription"></p>
+        </div>
+    </div>    
+
+    <section id="eventos" class="events">
+        <h2>Últimas Exposiciones</h2>
+        <div class="event-grid">
+            <div class="event-item" onclick="openEventModal('Sombras Urbanas', 'Camila Lira', '12 de Septiembre - 25 de Septiembre, 2024', 'Una serie de obras que exploran las interacciones entre la luz y la oscuridad en paisajes urbanos. Cada pieza invita al espectador a descubrir las historias ocultas entre las sombras.', 'img/event1.jpg')">
+                <img src="img/event1.jpg" alt="Exposición Sombras Urbanas" style="height: 200px;">
+                <h3>Exposición: "Sombras Urbanas"</h3>
+                <p>Artista: Camila Lira</p>
+                <p>Fecha: 12 de Septiembre - 25 de Septiembre, 2024</p>
+            </div>
+            <div class="event-item" onclick="openEventModal('Revolución Digital', 'Marco Castillo', '1 de Octubre - 15 de Octubre, 2024', 'Esta exposición refleja el impacto de la tecnología en el arte moderno. A través de instalaciones interactivas y piezas digitales, el artista nos invita a reflexionar sobre el futuro del arte en un mundo digitalizado.', 'img/event2.jpg')">
+                <img src="img/event2.jpg" alt="Exposición Revolución Digital" style="height: 200px;">
+                <h3>Exposición: "Revolución Digital"</h3>
+                <p>Artista: Marco Castillo</p>
+                <p>Fecha: 1 de Octubre - 15 de Octubre, 2024</p>
+            </div>
+            <div class="event-item" onclick="openEventModal('El Silencio del Color', 'Isabel Fernández', '20 de Octubre - 5 de Noviembre, 2024', 'Una exploración profunda de la relación entre el color y las emociones humanas. Fernández utiliza tonos apagados y técnicas minimalistas para expresar el silencio emocional en la vida contemporánea.', 'img/event3.jpg')">
+                <img src="img/event3.jpg" alt="Exposición El Silencio del Color" style="height: 200px;">
+                <h3>Exposición: "El Silencio del Color"</h3>
+                <p>Artista: Isabel Fernández</p>
+                <p>Fecha: 20 de Octubre - 5 de Noviembre, 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEventModal()">&times;</span>
+            <img id="eventImage" src="" alt="Imagen de la exposición" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 20px;">
+            <h3 id="eventTitle"></h3>
+            <p id="eventArtist"></p>
+            <p id="eventDate"></p>
+            <p id="eventDescription"></p>
+        </div>
+    </div>
+     
+
+    <section id="noticias" class="news">
+        <h2>Noticias y Actualizaciones</h2>
+        <div class="news-grid">
+            <div class="news-item" onclick="openNewsModal('Inauguración de Nueva Sala de Arte Contemporáneo', '5 de Septiembre, 2024', 'Nos complace anunciar la apertura de una nueva sala dedicada al arte contemporáneo, con obras que exploran los límites del arte moderno.', 'img/noticia1.jpg')">
+                <img src="img/noticia1.jpg" alt="Inauguración de Nueva Sala" class="news-img">
+                <div class="news-content">
+                    <h3>Inauguración de Nueva Sala de Arte Contemporáneo</h3>
+                    <p>Fecha: 5 de Septiembre, 2024</p>
+                    <p>Nos complace anunciar la apertura de una nueva sala dedicada al arte contemporáneo, con obras que exploran los límites del arte moderno.</p>
+                </div>
+            </div>
+            <div class="news-item" onclick="openNewsModal('Convocatoria Abierta para Artistas Emergentes', '20 de Septiembre, 2024', 'La galería está buscando nuevas voces en el arte contemporáneo. Si eres un artista emergente, envía tu propuesta antes del 20 de Octubre.', 'img/noticia2.jpg')">
+                <img src="img/noticia2.jpg" alt="Convocatoria de Artistas Emergentes" class="news-img">
+                <div class="news-content">
+                    <h3>Convocatoria Abierta para Artistas Emergentes</h3>
+                    <p>Fecha: 20 de Septiembre, 2024</p>
+                    <p>La galería está buscando nuevas voces en el arte contemporáneo. Si eres un artista emergente, envía tu propuesta antes del 20 de Octubre.</p>
+                </div>
+            </div>
+            <div class="news-item" onclick="openNewsModal('Taller de Creación Digital con Realidad Aumentada', '10 de Octubre, 2024', 'Únete a nuestro próximo taller donde aprenderás a fusionar el arte digital con tecnologías de realidad aumentada para crear experiencias inmersivas.', 'img/noticia3.jpeg')">
+                <img src="img/noticia3.jpeg" alt="Taller de Creación Digital" class="news-img">
+                <div class="news-content">
+                    <h3>Taller de Creación Digital con Realidad Aumentada</h3>
+                    <p>Fecha: 10 de Octubre, 2024</p>
+                    <p>Únete a nuestro próximo taller donde aprenderás a fusionar el arte digital con tecnologías de realidad aumentada para crear experiencias inmersivas.</p>
+                </div>
+            </div>
+        </div>
+    </section>   
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeNewsModal()">&times;</span>
+            <img id="newsImage" src="" alt="Imagen de la noticia" class="modal-img">
+            <h3 id="newsTitle"></h3>
+            <p id="newsDate"></p>
+            <p id="newsDescription"></p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Galería de Arte Moderno. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
